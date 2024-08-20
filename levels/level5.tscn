@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dcdem4tj87c6x" path="res://loophole.tscn" id="5_03ki8"]
 [ext_resource type="PackedScene" uid="uid://bcx6fhx3xkwo3" path="res://enemy.tscn" id="6_wa7rb"]
 [ext_resource type="PackedScene" uid="uid://dbixll5kvjupg" path="res://transition_rift.tscn" id="7_fe75c"]
-[ext_resource type="PackedScene" uid="uid://gxujxgtsso32" path="res://levels/level4.tscn" id="8_wlns6"]
+[ext_resource type="PackedScene" uid="uid://bl4cd30acc3ly" path="res://levels/level6.tscn" id="8_rags3"]
 [ext_resource type="PackedScene" uid="uid://cmbsjiqn01q6a" path="res://player.tscn" id="9_7knn0"]
 
 [node name="Level4" type="Node2D"]
@@ -60,7 +60,7 @@ camera = NodePath("../../C5")
 
 [node name="TransitionRift" parent="R2" instance=ExtResource("7_fe75c")]
 position = Vector2(2651, -504)
-target_scene = ExtResource("8_wlns6")
+target_scene = ExtResource("8_rags3")
 
 [node name="Rift" parent="R2" node_paths=PackedStringArray("target_position", "camera_min", "camera_max") instance=ExtResource("4_c5weu")]
 position = Vector2(2202, -1094)

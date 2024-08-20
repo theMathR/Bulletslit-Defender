@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dl4f6f6w7osil" path="res://game_panel.tscn" id="6_h7qsa"]
 [ext_resource type="Texture2D" uid="uid://btucnq4g6wes8" path="res://panels/level3.png" id="7_y7rtw"]
 [ext_resource type="PackedScene" uid="uid://dbixll5kvjupg" path="res://transition_rift.tscn" id="8_q3v2c"]
-[ext_resource type="PackedScene" uid="uid://d3n1kb7k701oo" path="res://levels/level5.tscn" id="9_j6jrn"]
+[ext_resource type="PackedScene" uid="uid://gxujxgtsso32" path="res://levels/level4.tscn" id="9_j6jrn"]
 [ext_resource type="Shader" path="res://glitch.gdshader" id="9_oec2j"]
 [ext_resource type="Texture2D" uid="uid://d2s2wv2cd84tq" path="res://assets/feetright.png" id="10_b4b5x"]
 [ext_resource type="Texture2D" uid="uid://baxgyxmgrjwho" path="res://assets/body.png" id="11_oquu2"]
