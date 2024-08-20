@@ -12,6 +12,7 @@ var hat = 0
 var loop = 0
 var dead = false
 var shot = false
+var checkpoint = false
 var player: CharacterBody2D
 const BULLET_MAX = 5
 const LAST_LEVEL = 8
@@ -44,4 +45,4 @@ func _notification(what):
 
 func debug_reset():
 	var file = FileAccess.open("user://save.txt", FileAccess.WRITE)
-	file.store_string("7\n0\n0\n0\n0")
+	file.store_string("5\n0\n0\n0\n0")

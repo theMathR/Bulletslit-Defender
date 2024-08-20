@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cmbsjiqn01q6a" path="res://player.tscn" id="3_ee227"]
 
 [node name="Level5" type="Node2D"]
+texture_filter = 1
 
 [node name="TileMapLayer" parent="." instance=ExtResource("1_m4265")]
 
