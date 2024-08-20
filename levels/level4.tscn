@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bcx6fhx3xkwo3" path="res://enemy.tscn" id="4_lackl"]
 [ext_resource type="PackedScene" uid="uid://ioxwrlmsxpfr" path="res://reload_box.tscn" id="7_cm8fr"]
 [ext_resource type="PackedScene" uid="uid://dbixll5kvjupg" path="res://transition_rift.tscn" id="7_xcxk6"]
-[ext_resource type="PackedScene" uid="uid://ck3bemj81sy67" path="res://levels/fakeend.tscn" id="9_yxxyt"]
+[ext_resource type="PackedScene" uid="uid://gxujxgtsso32" path="res://levels/level5.tscn" id="8_x8p6a"]
 
 [node name="Level4" type="Node2D"]
 texture_filter = 1
@@ -60,7 +60,7 @@ camera = NodePath("../../C5")
 
 [node name="TransitionRift" parent="R2" instance=ExtResource("7_xcxk6")]
 position = Vector2(2651, -504)
-target_scene = ExtResource("9_yxxyt")
+target_scene = ExtResource("8_x8p6a")
 
 [node name="Rift" parent="R2" node_paths=PackedStringArray("target_position", "camera_min", "camera_max") instance=ExtResource("3_jgp7k")]
 position = Vector2(2202, -1094)

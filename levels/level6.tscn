@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bl4cd30acc3ly"]
+
+[ext_resource type="PackedScene" uid="uid://bf85pwty15ec8" path="res://bg.tscn" id="1_m4265"]
+[ext_resource type="TileSet" uid="uid://b1m7plmymjmhb" path="res://tileset.tres" id="2_8mr4m"]
+[ext_resource type="PackedScene" uid="uid://cmbsjiqn01q6a" path="res://player.tscn" id="3_ee227"]
+
+[node name="Level5" type="Node2D"]
+
+[node name="TileMapLayer" parent="." instance=ExtResource("1_m4265")]
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="."]
+tile_set = ExtResource("2_8mr4m")
+
+[node name="Player" parent="." instance=ExtResource("3_ee227")]
+
+[node name="TileMapLayer3" type="TileMapLayer" parent="."]
+tile_set = ExtResource("2_8mr4m")

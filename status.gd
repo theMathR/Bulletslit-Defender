@@ -14,7 +14,7 @@ var dead = false
 var shot = false
 var player: CharacterBody2D
 const BULLET_MAX = 5
-const LAST_LEVEL = 5
+const LAST_LEVEL = 8
 const HATS_MAX = 7
 
 func _ready():
@@ -29,7 +29,7 @@ func _ready():
 func load_save():
 	if not FileAccess.file_exists("user://save.txt"): return
 	var file = FileAccess.open("user://save.txt", FileAccess.READ)
-	level = 4+0*int(file.get_line())
+	level = int(file.get_line())
 	hat = int(file.get_line())
 	high_score = int(file.get_line())
 	dialog = int(file.get_line())
@@ -44,4 +44,4 @@ func _notification(what):
 
 func debug_reset():
 	var file = FileAccess.open("user://save.txt", FileAccess.WRITE)
-	file.store_string("0\n0\n0\n0\n0")
+	file.store_string("7\n0\n0\n0\n0")

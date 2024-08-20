@@ -1216,9 +1216,9 @@ parameters/reload/request = 0
 position = Vector2(5, -125)
 shape = SubResource("RectangleShape2D_n80ew")
 
-[node name="StepSound" type="AudioStreamPlayer2D" parent="."]
+[node name="StepSound" type="AudioStreamPlayer" parent="."]
 
-[node name="OpenSound" type="AudioStreamPlayer2D" parent="."]
+[node name="OpenSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_6nsx7")
 volume_db = 10.0
 
