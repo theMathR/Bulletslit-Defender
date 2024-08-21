@@ -16,7 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://svlc6qax3acs" path="res://assets/void.png" id="8_5y3p4"]
 [ext_resource type="PackedScene" uid="uid://dl4f6f6w7osil" path="res://game_panel.tscn" id="8_73w6u"]
 [ext_resource type="Script" path="res://outside.gd" id="8_gvnad"]
-[ext_resource type="Texture2D" uid="uid://c6buq3q27t53m" path="res://assets/panelread.png" id="9_cr60p"]
+[ext_resource type="Texture2D" uid="uid://b4pcsr5g1vaos" path="res://panels/level6.png" id="11_i5ibm"]
 [ext_resource type="AudioStream" uid="uid://daoba738arrm1" path="res://sound/break.mp3" id="18_vx865"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yvoyp"]
@@ -243,7 +243,7 @@ position = Vector2(3320, 2330)
 
 [node name="GamePanel" parent="R2" instance=ExtResource("8_73w6u")]
 position = Vector2(3290, 3137)
-panel_texture = ExtResource("9_cr60p")
+panel_texture = ExtResource("11_i5ibm")
 
 [node name="R3" type="Node2D" parent="."]
 

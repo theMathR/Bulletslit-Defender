@@ -36,7 +36,7 @@ func _on_spawn_timer_timeout():
 	enemy.position.y = 100
 	
 	enemy.phase = randf()*100
-	enemy.speed = 2.4+(2*randf()-1)/10
+	enemy.speed = 1.9+(2*randf()-1)/10
 	enemy.frequency = randf()
 	enemy.amplitude = 1+randf()*20
 	$SpawnTimer.wait_time = 15 + randf()*2

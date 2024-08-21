@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://d3n1kb7k701oo"]
+[gd_scene load_steps=12 format=4 uid="uid://d3n1kb7k701oo"]
 
 [ext_resource type="PackedScene" uid="uid://bf85pwty15ec8" path="res://bg.tscn" id="1_4jv8e"]
 [ext_resource type="TileSet" uid="uid://b1m7plmymjmhb" path="res://tileset.tres" id="2_fbn8c"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://dbixll5kvjupg" path="res://transition_rift.tscn" id="7_fe75c"]
 [ext_resource type="PackedScene" uid="uid://bl4cd30acc3ly" path="res://levels/level6.tscn" id="8_rags3"]
 [ext_resource type="PackedScene" uid="uid://cmbsjiqn01q6a" path="res://player.tscn" id="9_7knn0"]
+[ext_resource type="PackedScene" uid="uid://dl4f6f6w7osil" path="res://game_panel.tscn" id="9_wbkcw"]
+[ext_resource type="Texture2D" uid="uid://dj2uu0l8kl0iv" path="res://panels/level5.png" id="10_0n8kt"]
 
 [node name="Level4" type="Node2D"]
 texture_filter = 1
@@ -111,6 +113,10 @@ position = Vector2(2070, 1935)
 [node name="RPOS" type="Node2D" parent="R3"]
 process_mode = 4
 position = Vector2(238, 1736)
+
+[node name="GamePanel" parent="R3" instance=ExtResource("9_wbkcw")]
+position = Vector2(1899, 1840)
+panel_texture = ExtResource("10_0n8kt")
 
 [node name="R4" type="Node2D" parent="."]
 

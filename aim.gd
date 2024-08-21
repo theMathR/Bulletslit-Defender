@@ -9,7 +9,6 @@ func _process(delta):
 	if mouse_move:
 		get_viewport().warp_mouse(position+mouse_move*0.25/delta)
 	if Input.is_action_just_pressed("shoot") and Status.aiming:
-		print("Hey")
 		var press = InputEventMouseButton.new()
 		press.position = position
 		press.pressed = true

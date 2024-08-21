@@ -18,6 +18,7 @@ func stats_random():
 
 func _on_timer_timeout():
 	tcount += 1
+	print('WHY')
 	stats_random()
 	var p = TextureRect.new()
 	p.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
@@ -28,5 +29,4 @@ func _on_timer_timeout():
 		var file = FileAccess.open("user://save.txt", FileAccess.WRITE)
 		file.store_string("0\n0\n0\n0\n-1")
 		file.close()
-		print('IT HURTS\n'.repeat(8))
 		get_tree().quit(8008135)
