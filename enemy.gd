@@ -15,6 +15,7 @@ func shoot():
 	if c and c.name == "Player" and c.is_on_floor():
 		c.die()
 
+	
 func _process(delta):
 	if not is_on_floor():
 		velocity.y += 2500*delta

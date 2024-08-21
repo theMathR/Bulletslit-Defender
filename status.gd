@@ -29,7 +29,7 @@ func _ready():
 func load_save():
 	if not FileAccess.file_exists("user://save.txt"): return
 	var file = FileAccess.open("user://save.txt", FileAccess.READ)
-	level = 4+0*int(file.get_line())
+	level = 0*int(file.get_line())
 	hat = int(file.get_line())
 	high_score = int(file.get_line())
 	dialog = int(file.get_line())
