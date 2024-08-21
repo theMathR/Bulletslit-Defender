@@ -49,6 +49,7 @@ func _physics_process(delta):
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and (is_on_floor() or interaction_jump):
+		interaction_jump = 0
 		$AnimationTree['parameters/jump/request'] = AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE
 	interaction_jump = max(0, interaction_jump-delta)
 

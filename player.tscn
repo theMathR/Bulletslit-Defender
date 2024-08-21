@@ -1349,6 +1349,7 @@ text = "000000"
 
 [node name="GameOver" type="Control" parent="CanvasLayer"]
 visible = false
+texture_filter = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -1358,6 +1359,7 @@ grow_vertical = 2
 script = ExtResource("33_byhff")
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/GameOver"]
+texture_filter = 1
 material = SubResource("ShaderMaterial_y5a6d")
 layout_mode = 1
 anchors_preset = 8
@@ -1375,6 +1377,7 @@ texture = ExtResource("34_wy543")
 
 [node name="Replay" type="TextureButton" parent="CanvasLayer/GameOver"]
 visible = false
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1391,6 +1394,7 @@ texture_normal = ExtResource("35_j5efh")
 texture_pressed = ExtResource("36_jqpv3")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/GameOver"]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1406,11 +1410,13 @@ grow_vertical = 2
 alignment = 1
 
 [node name="Button" type="Button" parent="CanvasLayer/GameOver/HBoxContainer"]
+texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Persist"
 
 [node name="Button3" type="Button" parent="CanvasLayer/GameOver/HBoxContainer"]
+texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Reset"
@@ -1427,6 +1433,7 @@ grow_vertical = 2
 script = ExtResource("27_w2e2e")
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/TitleScreen"]
+texture_filter = 1
 material = SubResource("ShaderMaterial_tagvi")
 layout_mode = 1
 anchors_preset = -1
@@ -1441,6 +1448,7 @@ texture = ExtResource("27_g6ikg")
 
 [node name="Play" type="TextureButton" parent="CanvasLayer/TitleScreen"]
 visible = false
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1458,6 +1466,7 @@ texture_pressed = ExtResource("30_u33e0")
 
 [node name="Left" type="TextureButton" parent="CanvasLayer/TitleScreen"]
 visible = false
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1475,6 +1484,7 @@ texture_pressed = ExtResource("29_uvwlx")
 
 [node name="Right" type="TextureButton" parent="CanvasLayer/TitleScreen"]
 visible = false
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1492,6 +1502,7 @@ texture_pressed = ExtResource("29_uvwlx")
 flip_h = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/TitleScreen"]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1507,11 +1518,13 @@ grow_vertical = 2
 alignment = 1
 
 [node name="Button" type="Button" parent="CanvasLayer/TitleScreen/HBoxContainer"]
+texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Proceed"
 
 [node name="Button3" type="Button" parent="CanvasLayer/TitleScreen/HBoxContainer"]
+texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Reset"
@@ -1525,6 +1538,7 @@ theme = ExtResource("9_3g7r0")
 texture = ExtResource("37_0chsu")
 
 [node name="Level" type="Label" parent="CanvasLayer/TitleScreen/Counters"]
+texture_filter = 1
 layout_mode = 0
 offset_left = 72.0
 offset_top = 57.0
