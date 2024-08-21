@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://d1p01btjtsd3e"]
+[gd_scene load_steps=8 format=3 uid="uid://d1p01btjtsd3e"]
 
 [ext_resource type="Texture2D" uid="uid://da05qw81iw1hm" path="res://assets/sky.png" id="1_e4hwq"]
 [ext_resource type="Script" path="res://outside_view.gd" id="1_yajl3"]
 [ext_resource type="Texture2D" uid="uid://b2ujtukbgmoxx" path="res://assets/ground.png" id="2_sogcc"]
 [ext_resource type="Script" path="res://outside.gd" id="3_hna53"]
 [ext_resource type="AudioStream" uid="uid://daoba738arrm1" path="res://sound/break.mp3" id="5_jy3bq"]
+[ext_resource type="AudioStream" uid="uid://b2vtjooycto1c" path="res://sound/hit.mp3" id="6_c5jst"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_46106"]
 size = Vector2(2928.5, 330)
@@ -41,6 +42,10 @@ one_shot = true
 
 [node name="BreakSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_jy3bq")
+volume_db = -10.0
+
+[node name="HitSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_c5jst")
 volume_db = -10.0
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

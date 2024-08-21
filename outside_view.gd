@@ -45,7 +45,9 @@ func _on_spawn_timer_timeout():
 	move_child(enemy, 1)
 
 func hit():
-	if loophole: loophole.get_node("AnimationPlayer").play('bonk')
+	if loophole:
+		if Status.player.interaction == loophole: $HitSound.play()
+		loophole.get_node("AnimationPlayer").play('bonk')
 
 func _on_break_timer_timeout():
 	$SpawnTimer.stop()

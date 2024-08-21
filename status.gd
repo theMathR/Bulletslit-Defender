@@ -19,7 +19,7 @@ const LAST_LEVEL = 8
 const HATS_MAX = 7
 
 func _ready():
-	#debug_reset()
+	debug_reset()
 	get_viewport().physics_object_picking_sort = true
 	get_viewport().physics_object_picking_first_only = true
 	load_save()
@@ -45,4 +45,4 @@ func _notification(what):
 
 func debug_reset():
 	var file = FileAccess.open("user://save.txt", FileAccess.WRITE)
-	file.store_string("0\n0\n0\n0\n0")
+	file.store_string("2\n0\n0\n0\n0")

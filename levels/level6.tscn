@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://bl4cd30acc3ly"]
+[gd_scene load_steps=26 format=4 uid="uid://bl4cd30acc3ly"]
 
 [ext_resource type="PackedScene" uid="uid://bf85pwty15ec8" path="res://bg.tscn" id="1_m4265"]
 [ext_resource type="TileSet" uid="uid://b1m7plmymjmhb" path="res://tileset.tres" id="2_8mr4m"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://dl4f6f6w7osil" path="res://game_panel.tscn" id="8_73w6u"]
 [ext_resource type="Script" path="res://outside.gd" id="8_gvnad"]
 [ext_resource type="Texture2D" uid="uid://b4pcsr5g1vaos" path="res://panels/level6.png" id="11_i5ibm"]
+[ext_resource type="Texture2D" uid="uid://62rjb77gfemi" path="res://panels/instakill.png" id="17_gn26c"]
 [ext_resource type="AudioStream" uid="uid://daoba738arrm1" path="res://sound/break.mp3" id="18_vx865"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yvoyp"]
@@ -366,35 +367,12 @@ material = SubResource("ShaderMaterial_503cc")
 position = Vector2(951, -228)
 texture = ExtResource("8_5y3p4")
 
-[node name="Ground" type="CharacterBody2D" parent="OutsideView"]
-input_pickable = true
-script = ExtResource("8_gvnad")
-main_scale = 5.0
-
-[node name="Sprite2D2" type="Sprite2D" parent="OutsideView/Ground"]
-position = Vector2(953, 318)
-texture = ExtResource("8_5y3p4")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="OutsideView/Ground"]
-position = Vector2(964.75, 158)
-shape = SubResource("RectangleShape2D_46106")
-
-[node name="Camera2D" type="Camera2D" parent="OutsideView"]
-
-[node name="SpawnTimer" type="Timer" parent="OutsideView"]
-wait_time = 16.0
-autostart = true
-
-[node name="BreakTimer" type="Timer" parent="OutsideView"]
-wait_time = 5.0
-one_shot = true
-
-[node name="BreakSound" type="AudioStreamPlayer" parent="OutsideView"]
-stream = ExtResource("18_vx865")
-volume_db = -10.0
-
 [node name="Instakill" type="Node2D" parent="OutsideView"]
 position = Vector2(-3140, -8630)
+
+[node name="GamePanel" parent="OutsideView/Instakill" instance=ExtResource("8_73w6u")]
+position = Vector2(4650, 8546)
+panel_texture = ExtResource("17_gn26c")
 
 [node name="Enemy" parent="OutsideView/Instakill" instance=ExtResource("6_tacyk")]
 position = Vector2(4474, 8612)
@@ -428,6 +406,33 @@ position = Vector2(5161, 8707)
 [node name="RPOS" type="Node2D" parent="OutsideView/Instakill"]
 process_mode = 4
 position = Vector2(4641, 8376)
+
+[node name="Ground" type="CharacterBody2D" parent="OutsideView"]
+input_pickable = true
+script = ExtResource("8_gvnad")
+main_scale = 5.0
+
+[node name="Sprite2D2" type="Sprite2D" parent="OutsideView/Ground"]
+position = Vector2(953, 318)
+texture = ExtResource("8_5y3p4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OutsideView/Ground"]
+position = Vector2(964.75, 158)
+shape = SubResource("RectangleShape2D_46106")
+
+[node name="Camera2D" type="Camera2D" parent="OutsideView"]
+
+[node name="SpawnTimer" type="Timer" parent="OutsideView"]
+wait_time = 16.0
+autostart = true
+
+[node name="BreakTimer" type="Timer" parent="OutsideView"]
+wait_time = 5.0
+one_shot = true
+
+[node name="BreakSound" type="AudioStreamPlayer" parent="OutsideView"]
+stream = ExtResource("18_vx865")
+volume_db = -10.0
 
 [node name="C0" type="Camera2D" parent="."]
 position = Vector2(-2769, 1055)
