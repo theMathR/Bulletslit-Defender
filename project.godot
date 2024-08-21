@@ -28,7 +28,6 @@ Status="*res://status.gd"
 
 window/size/viewport_width=1000
 window/size/viewport_height=650
-window/size/mode=4
 window/stretch/mode="canvas_items"
 
 [input]

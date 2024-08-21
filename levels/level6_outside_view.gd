@@ -36,13 +36,14 @@ func _on_spawn_timer_timeout():
 	enemy.position.y = 100
 	
 	enemy.phase = randf()*100
-	enemy.speed = min(10,2+(randf()*2-1)/2.+Status.kills/100.)
-	enemy.frequency = randf()*min(2,Status.kills/10.)
-	enemy.amplitude = 1+randf()*min(200,Status.kills)
-	$SpawnTimer.wait_time = max(5,13 + randf()*2 - Status.kills**2/100.)
+	enemy.speed = 2.4+(2*randf()-1)/10
+	enemy.frequency = randf()
+	enemy.amplitude = 1+randf()*20
+	$SpawnTimer.wait_time = 15 + randf()*2
 	
 	add_child(enemy)
 	move_child(enemy, 1)
+
 
 func hit():
 	if loophole: loophole.get_node("AnimationPlayer").play('bonk')
@@ -52,10 +53,12 @@ func _on_break_timer_timeout():
 	broken = true
 	$BreakSound.play()
 	
-	var rift = load("res://transition_rift.tscn").instantiate()
+	var rift = load("res://rift.tscn").instantiate()
 	rift.position = loophole.position
-	rift.material = null
-	rift.target_scene = preload("res://levels/escape.tscn")
+	rift.material = loophole.material
+	rift.target_position = $Instakill/RPOS
+	rift.camera_min = $Instakill/CMIN
+	rift.camera_max = $Instakill/CMAX
 	loophole.get_parent().add_child(rift)
 	loophole.get_parent().move_child(rift, loophole.get_index())
 	

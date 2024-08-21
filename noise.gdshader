@@ -9,8 +9,10 @@ float random( vec2 p )
 }
 
 void fragment() {
-	float t = random(vec2(random(UV*(paused?522.752757:TIME)),1.1234567896));
-	COLOR = vec4(t,t,t,1.0);
+	if (COLOR.b > 0.) {
+		float t = random(vec2(random(UV*(paused?522.752757:TIME)),1.1234567896));
+		COLOR = vec4(t,t,t,1.0);
+	}
 }
 
 //void light() {

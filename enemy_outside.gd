@@ -27,3 +27,6 @@ func _process(delta):
 		position.x = amplitude*sin(z*frequency+phase)+base_x
 		if z >= MAX_Z and position.x < 100 and position.x > -100:
 			$AnimationTree['parameters/breaking/transition_request'] = 'yes'
+
+func hit():
+	get_parent().hit()
