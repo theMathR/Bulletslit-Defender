@@ -10,7 +10,7 @@ func _ready():
 		$Left.show()
 		$Right.show()
 		$CheckBox2.show()
-		$HBoxContainer.hide()
+		$Glitched.hide()
 		var n = str(Status.high_score)
 		$Counters/Level.text = "0".repeat(6-len(n)) + n
 

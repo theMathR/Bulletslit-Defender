@@ -47,7 +47,7 @@ func _on_spawn_timer_timeout():
 
 func hit():
 	if loophole:
-		if Status.player.interaction == loophole: $HitSound.play()
+		if Status.player.interaction == loophole and Status.interacting: $HitSound.play()
 		loophole.get_node("AnimationPlayer").play('bonk')
 
 func _on_break_timer_timeout():

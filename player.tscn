@@ -1323,6 +1323,7 @@ anchor_right = 0.5
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 0
+mouse_filter = 1
 
 [node name="Fire" type="TextureRect" parent="CanvasLayer/LoopholeCover/Gun"]
 visible = false
@@ -1471,7 +1472,6 @@ theme = ExtResource("36_vugn4")
 text = "Reset"
 
 [node name="TitleScreen" type="Control" parent="CanvasLayer"]
-visible = false
 texture_filter = 1
 layout_mode = 3
 anchors_preset = 15
@@ -1504,10 +1504,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -87.0
+offset_top = -72.0
+offset_right = 87.0
+offset_bottom = 72.0
 grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("29_sgc0q")
@@ -1550,43 +1550,6 @@ texture_normal = ExtResource("28_je0rm")
 texture_pressed = ExtResource("29_uvwlx")
 flip_h = true
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/TitleScreen"]
-texture_filter = 1
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -334.5
-offset_top = -34.5
-offset_right = 334.5
-offset_bottom = 34.5
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("36_vugn4")
-alignment = 1
-
-[node name="Button" type="Button" parent="CanvasLayer/TitleScreen/HBoxContainer"]
-texture_filter = 1
-layout_mode = 2
-size_flags_horizontal = 3
-theme = ExtResource("36_vugn4")
-text = "Proceed"
-
-[node name="Button3" type="Button" parent="CanvasLayer/TitleScreen/HBoxContainer"]
-texture_filter = 1
-layout_mode = 2
-size_flags_horizontal = 3
-theme = ExtResource("36_vugn4")
-text = "Reset"
-
-[node name="CheckBox" type="CheckBox" parent="CanvasLayer/TitleScreen/HBoxContainer"]
-layout_mode = 2
-theme = ExtResource("36_vugn4")
-button_pressed = true
-text = "Music"
-
 [node name="CheckBox2" type="CheckBox" parent="CanvasLayer/TitleScreen"]
 visible = false
 layout_mode = 1
@@ -1620,6 +1583,60 @@ offset_top = 57.0
 offset_right = 127.0
 offset_bottom = 80.0
 text = "NaN"
+
+[node name="Glitched" type="Control" parent="CanvasLayer/TitleScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CheckBox" type="CheckBox" parent="CanvasLayer/TitleScreen/Glitched"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -74.0
+offset_top = -69.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("36_vugn4")
+button_pressed = true
+text = "Music"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/TitleScreen/Glitched"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -334.5
+offset_top = -34.5
+offset_right = 334.5
+offset_bottom = 34.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("36_vugn4")
+alignment = 1
+
+[node name="Button" type="Button" parent="CanvasLayer/TitleScreen/Glitched/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("36_vugn4")
+text = "Proceed"
+
+[node name="Button3" type="Button" parent="CanvasLayer/TitleScreen/Glitched/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("36_vugn4")
+text = "Reset"
 
 [node name="FadeIn" type="ColorRect" parent="CanvasLayer"]
 texture_filter = 1
@@ -1663,7 +1680,7 @@ drag_vertical_enabled = true
 [connection signal="pressed" from="CanvasLayer/TitleScreen/Play" to="CanvasLayer/AnimationPlayer" method="play" binds= ["start"]]
 [connection signal="pressed" from="CanvasLayer/TitleScreen/Left" to="CanvasLayer/TitleScreen" method="_on_left_pressed"]
 [connection signal="pressed" from="CanvasLayer/TitleScreen/Right" to="CanvasLayer/TitleScreen" method="_on_right_pressed"]
-[connection signal="pressed" from="CanvasLayer/TitleScreen/HBoxContainer/Button" to="CanvasLayer/TitleScreen" method="begin"]
-[connection signal="pressed" from="CanvasLayer/TitleScreen/HBoxContainer/Button3" to="." method="reset"]
-[connection signal="toggled" from="CanvasLayer/TitleScreen/HBoxContainer/CheckBox" to="CanvasLayer/TitleScreen" method="_on_check_box_toggled"]
 [connection signal="toggled" from="CanvasLayer/TitleScreen/CheckBox2" to="CanvasLayer/TitleScreen" method="_on_check_box_toggled"]
+[connection signal="toggled" from="CanvasLayer/TitleScreen/Glitched/CheckBox" to="CanvasLayer/TitleScreen" method="_on_check_box_toggled"]
+[connection signal="pressed" from="CanvasLayer/TitleScreen/Glitched/HBoxContainer/Button" to="CanvasLayer/TitleScreen" method="begin"]
+[connection signal="pressed" from="CanvasLayer/TitleScreen/Glitched/HBoxContainer/Button3" to="." method="reset"]

@@ -460,6 +460,10 @@ one_shot = true
 stream = ExtResource("18_vx865")
 volume_db = -10.0
 
+[node name="HitSound" type="AudioStreamPlayer" parent="OutsideView"]
+stream = ExtResource("5_owluf")
+volume_db = -10.0
+
 [node name="C0" type="Camera2D" parent="."]
 position = Vector2(-2769, 1055)
 zoom = Vector2(0.8, 0.8)
