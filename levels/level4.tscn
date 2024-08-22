@@ -190,7 +190,7 @@ camera_min = NodePath("../CMIN")
 camera_max = NodePath("../CMAX")
 
 [node name="Player" parent="." node_paths=PackedStringArray("camera_min", "camera_max") instance=ExtResource("2_4ljqr")]
-position = Vector2(-167, 3113)
+position = Vector2(-171, 3125)
 camera_min = NodePath("../R2/CMIN")
 camera_max = NodePath("../R2/CMAX")
 

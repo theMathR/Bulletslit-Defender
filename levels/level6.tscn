@@ -374,6 +374,7 @@ position = Vector2(8095, 515)
 target_scene = ExtResource("4_ngd02")
 
 [node name="Player" parent="." node_paths=PackedStringArray("camera_min", "camera_max") instance=ExtResource("3_ee227")]
+position = Vector2(1, 23)
 camera_min = NodePath("../R1/CMIN")
 camera_max = NodePath("../R1/CMAX")
 
