@@ -64,7 +64,7 @@ process_mode = 4
 position = Vector2(-1682, 170)
 
 [node name="Player" parent="." node_paths=PackedStringArray("camera_min", "camera_max") instance=ExtResource("1_6kt47")]
-position = Vector2(2, 19)
+position = Vector2(1, 19)
 camera_min = NodePath("../Rift2/Cmin2")
 camera_max = NodePath("../Rift2/Cmax2")
 

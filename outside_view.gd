@@ -6,6 +6,7 @@ extends Node2D
 var broken = false
 
 func _ready():
+	loophole.get_node('Sprite2D').texture = load("res://assets/loophole2.png")
 	loophole.camera = $Camera2D
 
 func sort_by_z(a, b):
