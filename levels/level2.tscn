@@ -78,7 +78,7 @@ camera_max = NodePath("../Rift2/Node2D2")
 
 [node name="Node2D" type="Node2D" parent="Node2D/Rift"]
 process_mode = 4
-position = Vector2(-158, -802)
+position = Vector2(-173, -832)
 
 [node name="Node2D2" type="Node2D" parent="Node2D/Rift"]
 process_mode = 4
