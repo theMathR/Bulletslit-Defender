@@ -45,4 +45,4 @@ func _notification(what):
 
 func debug_reset():
 	var file = FileAccess.open("user://save.txt", FileAccess.WRITE)
-	file.store_string("0\n0\n0\n0\n0")
+	file.store_string("5\n0\n0\n0\n0")
