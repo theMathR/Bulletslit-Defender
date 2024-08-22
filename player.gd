@@ -120,7 +120,10 @@ func reset():
 	Status.loop = 0
 	Status.hat = 0
 	$CanvasLayer/FadeIn.color = Color.BLACK
+	Music.stop()
 	await get_tree().create_timer(3).timeout
+	Music.stream = load("res://sound/title.wav")
+	Music.play()
 	get_tree().change_scene_to_file("res://levels/main.tscn")
 
 func goto():

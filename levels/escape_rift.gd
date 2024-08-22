@@ -25,4 +25,6 @@ func _on_timer_timeout():
 		Status.bullets = 5
 		get_tree().paused = false
 		Status.interacting = false
+		Music.stream = load("res://sound/winds.mp3")
+		Music.play()
 		get_tree().change_scene_to_file("res://levels/level1.tscn")

@@ -3,6 +3,7 @@ extends Interactive
 var tcount = 0
 
 func act():
+	Music.stop()
 	$Timer.start()
 	$"../../CanvasLayer".show()
 	get_tree().paused = true

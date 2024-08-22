@@ -9,6 +9,7 @@ func _ready():
 		$Play.show()
 		$Left.show()
 		$Right.show()
+		$CheckBox2.show()
 		$HBoxContainer.hide()
 		var n = str(Status.high_score)
 		$Counters/Level.text = "0".repeat(6-len(n)) + n
@@ -30,3 +31,7 @@ func begin():
 	hide()
 	Status.in_menu = false
 	Status.player.show_starting_text()
+
+
+func _on_check_box_toggled(toggled_on):
+	Music.set_enabled(toggled_on)

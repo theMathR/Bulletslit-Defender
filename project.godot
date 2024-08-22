@@ -20,6 +20,7 @@ config/macos_native_icon="res://iconmac.png"
 [autoload]
 
 Status="*res://status.gd"
+Music="*res://music.gd"
 
 [display]
 

@@ -1,6 +1,7 @@
-[gd_scene load_steps=17 format=4 uid="uid://ck3bemj81sy67"]
+[gd_scene load_steps=18 format=4 uid="uid://ck3bemj81sy67"]
 
 [ext_resource type="PackedScene" uid="uid://cmbsjiqn01q6a" path="res://player.tscn" id="1_5l8n6"]
+[ext_resource type="Script" path="res://stop_music.gd" id="1_7lbux"]
 [ext_resource type="Shader" path="res://noise.gdshader" id="1_fumcg"]
 [ext_resource type="Texture2D" uid="uid://svlc6qax3acs" path="res://assets/void.png" id="2_8nji8"]
 [ext_resource type="PackedScene" uid="uid://dl4f6f6w7osil" path="res://game_panel.tscn" id="3_pem2v"]
@@ -26,6 +27,7 @@ size = Vector2(633, 1293)
 
 [node name="Node2D" type="Node2D"]
 texture_filter = 1
+script = ExtResource("1_7lbux")
 
 [node name="BG" type="Parallax2D" parent="."]
 scroll_offset = Vector2(7119, -272)

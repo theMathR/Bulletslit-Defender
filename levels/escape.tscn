@@ -1,5 +1,6 @@
-[gd_scene load_steps=22 format=4 uid="uid://n5b3s1hr4o1t"]
+[gd_scene load_steps=23 format=4 uid="uid://n5b3s1hr4o1t"]
 
+[ext_resource type="Script" path="res://stop_music.gd" id="1_hyrwo"]
 [ext_resource type="Texture2D" uid="uid://da05qw81iw1hm" path="res://assets/sky.png" id="1_thvik"]
 [ext_resource type="TileSet" uid="uid://b1m7plmymjmhb" path="res://tileset.tres" id="2_0j50a"]
 [ext_resource type="PackedScene" uid="uid://dl4f6f6w7osil" path="res://game_panel.tscn" id="2_ajk82"]
@@ -47,6 +48,7 @@ shader_parameter/thinness = 10.0
 shader_parameter/speed = 1.0
 
 [node name="Node" type="Node"]
+script = ExtResource("1_hyrwo")
 
 [node name="Sky" type="CanvasLayer" parent="."]
 layer = -1
