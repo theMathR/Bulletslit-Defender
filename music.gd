@@ -8,7 +8,7 @@ func _ready():
 	if Status.level > 0:
 		stream = load("res://sound/winds.mp3")
 	else:
-		stream = load("res://sound/title.wav")
+		stream = load("res://sound/title.mp3")
 	playing = enabled
 
 func transition_start(to):
@@ -20,6 +20,7 @@ func transition_start(to):
 func set_music_to_game():
 	if transition_to == "game" and Status.level:
 		transition_to = "winds"
+	self['parameters/looping'] = not (transition_to == "gameover" and Status.level==0)
 	stream = load("res://sound/"+transition_to+".mp3")
 	volume_db = 0
 	playing = enabled
