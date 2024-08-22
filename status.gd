@@ -16,7 +16,7 @@ var checkpoint = false
 var player: CharacterBody2D
 const BULLET_MAX = 5
 const LAST_LEVEL = 8
-const HATS_MAX = 8
+const HATS_MAX = 9
 
 func _ready():
 	#debug_reset()

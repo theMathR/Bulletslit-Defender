@@ -144,6 +144,7 @@ func free_controls():
 
 func load_hat():
 	$Sprites/Head/Helmet.texture = load("res://hats/"+str(Status.hat)+".png")
+	$Sprites/Head/Helmet.position.y -= $Sprites/Head/Helmet.texture.get_height() - 144
 
 func retry():
 	Status.bullets = 5 if Status.level != 2 else 4
