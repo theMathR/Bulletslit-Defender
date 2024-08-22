@@ -4,6 +4,7 @@ var transition_to
 var enabled = true
 
 func _ready():
+	if Status.loop == -1: enabled = false
 	if Status.level > 0:
 		stream = load("res://sound/winds.mp3")
 	else:
@@ -28,7 +29,7 @@ func start_winds():
 	playing = enabled
 
 func set_enabled(b):
-	enabled = b
+	enabled = b and Status.loop != -1
 	if not b:
 		stop()
 	else:

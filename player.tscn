@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=3 uid="uid://cmbsjiqn01q6a"]
+[gd_scene load_steps=77 format=3 uid="uid://cmbsjiqn01q6a"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_vfau6"]
 [ext_resource type="Texture2D" uid="uid://d2s2wv2cd84tq" path="res://assets/feetright.png" id="2_o0h64"]
@@ -38,7 +38,9 @@
 [ext_resource type="Texture2D" uid="uid://8ops4fyhlbxc" path="res://assets/retry.png" id="35_j5efh"]
 [ext_resource type="Texture2D" uid="uid://cw611s4fxwgvf" path="res://assets/music.png" id="36_0pc2n"]
 [ext_resource type="Texture2D" uid="uid://bkjt3gk8ceuda" path="res://assets/retry_pressed.png" id="36_jqpv3"]
+[ext_resource type="Theme" uid="uid://b4ttc2kc71c7e" path="res://ui_glitched.tres" id="36_vugn4"]
 [ext_resource type="Texture2D" uid="uid://snoi20p02kbd" path="res://assets/ui3.png" id="37_0chsu"]
+[ext_resource type="Texture2D" uid="uid://dr1ybdl8dsxcq" path="res://assets/music_unchecked.png" id="37_3tx0s"]
 [ext_resource type="AudioStream" uid="uid://blieh4k7vi1fp" path="res://sound/switch.mp3" id="39_r7w4i"]
 [ext_resource type="Script" path="res://fakemusic.gd" id="40_2lm58"]
 
@@ -1451,18 +1453,21 @@ offset_right = 335.0
 offset_bottom = 174.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("36_vugn4")
 alignment = 1
 
 [node name="Button" type="Button" parent="CanvasLayer/GameOver/HBoxContainer"]
 texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 3
+theme = ExtResource("36_vugn4")
 text = "Persist"
 
 [node name="Button3" type="Button" parent="CanvasLayer/GameOver/HBoxContainer"]
 texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 3
+theme = ExtResource("36_vugn4")
 text = "Reset"
 
 [node name="TitleScreen" type="Control" parent="CanvasLayer"]
@@ -1559,22 +1564,26 @@ offset_right = 334.5
 offset_bottom = 34.5
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("36_vugn4")
 alignment = 1
 
 [node name="Button" type="Button" parent="CanvasLayer/TitleScreen/HBoxContainer"]
 texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 3
+theme = ExtResource("36_vugn4")
 text = "Proceed"
 
 [node name="Button3" type="Button" parent="CanvasLayer/TitleScreen/HBoxContainer"]
 texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 3
+theme = ExtResource("36_vugn4")
 text = "Reset"
 
 [node name="CheckBox" type="CheckBox" parent="CanvasLayer/TitleScreen/HBoxContainer"]
 layout_mode = 2
+theme = ExtResource("36_vugn4")
 button_pressed = true
 text = "Music"
 
@@ -1586,12 +1595,14 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -74.0
-offset_top = -69.0
+offset_left = -58.0
+offset_top = -58.0
 grow_horizontal = 0
 grow_vertical = 0
+focus_mode = 0
+theme_override_icons/checked = ExtResource("36_0pc2n")
+theme_override_icons/unchecked = ExtResource("37_3tx0s")
 button_pressed = true
-icon = ExtResource("36_0pc2n")
 
 [node name="Counters" type="TextureRect" parent="CanvasLayer/TitleScreen"]
 texture_filter = 1
