@@ -156,6 +156,7 @@ libraries = {
 
 [node name="BonkSound" type="AudioStreamPlayer2D" parent="R1/Loophole"]
 max_distance = 3000.0
+bus = &"sfx"
 
 [node name="Particles" type="Sprite2D" parent="R1/Loophole"]
 modulate = Color(1, 1, 1, 0)
@@ -459,10 +460,12 @@ one_shot = true
 [node name="BreakSound" type="AudioStreamPlayer" parent="OutsideView"]
 stream = ExtResource("18_vx865")
 volume_db = -10.0
+bus = &"sfx"
 
 [node name="HitSound" type="AudioStreamPlayer" parent="OutsideView"]
 stream = ExtResource("5_owluf")
 volume_db = -10.0
+bus = &"sfx"
 
 [node name="C0" type="Camera2D" parent="."]
 position = Vector2(-2769, 1055)

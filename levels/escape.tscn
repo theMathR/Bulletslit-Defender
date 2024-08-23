@@ -84,6 +84,7 @@ volume_db = 10.0
 autoplay = true
 max_distance = 15000.0
 attenuation = 3.73213
+bus = &"sfx"
 
 [node name="GamePanel" parent="Escape" instance=ExtResource("2_ajk82")]
 position = Vector2(1220, -23)
@@ -156,6 +157,7 @@ wait_time = 0.05
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Escape/Rift"]
 process_mode = 3
 stream = ExtResource("15_uc481")
+bus = &"sfx"
 
 [node name="Player" parent="Escape" node_paths=PackedStringArray("camera_min", "camera_max") instance=ExtResource("3_bime2")]
 position = Vector2(-396, 48)

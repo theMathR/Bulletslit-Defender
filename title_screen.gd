@@ -31,7 +31,3 @@ func begin():
 	hide()
 	Status.in_menu = false
 	Status.player.show_starting_text()
-
-
-func _on_check_box_toggled(toggled_on):
-	Music.set_enabled(toggled_on)

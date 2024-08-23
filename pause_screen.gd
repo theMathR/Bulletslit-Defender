@@ -23,32 +23,3 @@ func _process(delta):
 			get_tree().paused = true
 			$AudioStreamPlayer.stream = load("res://sound/pause.mp3")
 			$AudioStreamPlayer.play()
-			
-	Music.volume = $Settings/HSlider.value
-	
-	
-	
-	if not visible:
-		if Music.enabled == true:
-			$Settings/CheckBox.button_pressed = true
-		else:
-			$Settings/CheckBox.button_pressed = false
-
-
-func _on_button_pressed():
-	$Settings.show()
-	
-	
-	
-
-
-func _on_open_texture_button_pressed():
-	$Settings.show()
-
-
-func _on_close_settings_pressed():
-	$Settings.hide()
-
-
-func _on_check_box_toggled(toggled_on):
-	Music.set_enabled(toggled_on)
