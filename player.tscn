@@ -3250,6 +3250,7 @@ texture_normal = ExtResource("30_bkhwo")
 texture_pressed = ExtResource("31_y37k3")
 
 [node name="Settings" type="Control" parent="CanvasLayer"]
+visible = false
 texture_filter = 1
 layout_mode = 3
 anchors_preset = 0
