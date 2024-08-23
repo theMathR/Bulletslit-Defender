@@ -1,6 +1,7 @@
 extends Control
 
-
+func _ready():
+	if Status.level == 0: material = null
 
 func _on_close_settings_pressed():
 	hide()
