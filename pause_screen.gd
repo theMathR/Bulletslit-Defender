@@ -10,7 +10,7 @@ func _ready():
 	if Status.level == 0:
 		$TextureRect.material = null
 		$Replay.show()
-		$Button.hide()
+		$HBoxContainer.hide()
 
 func _process(delta):
 	if Input.is_action_just_pressed("cancel"):
