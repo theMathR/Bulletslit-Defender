@@ -3250,6 +3250,7 @@ texture_normal = ExtResource("30_bkhwo")
 texture_pressed = ExtResource("31_y37k3")
 
 [node name="Settings" type="Control" parent="CanvasLayer"]
+visible = false
 texture_filter = 1
 layout_mode = 3
 anchors_preset = 0
@@ -3518,6 +3519,6 @@ drag_vertical_enabled = true
 [connection signal="toggled" from="CanvasLayer/Settings/Panel/Control/Interact/InteractTextureButton" to="CanvasLayer/Settings/Panel/Control/Interact/InteractTextureButton" method="_on_toggled"]
 [connection signal="toggled" from="CanvasLayer/Settings/Panel/Control/Pause/PauseTextureButton" to="CanvasLayer/Settings/Panel/Control/Pause/PauseTextureButton" method="_on_toggled"]
 [connection signal="pressed" from="CanvasLayer/Settings/CloseSettings" to="CanvasLayer/Settings" method="_on_close_settings_pressed"]
-[connection signal="drag_ended" from="CanvasLayer/Settings/HSlider" to="CanvasLayer/Settings" method="_on_h_slider_drag_ended"]
-[connection signal="drag_ended" from="CanvasLayer/Settings/HSlider2" to="CanvasLayer/Settings" method="_on_h_slider_2_drag_ended"]
+[connection signal="value_changed" from="CanvasLayer/Settings/HSlider" to="CanvasLayer/Settings" method="_on_h_slider_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/Settings/HSlider2" to="CanvasLayer/Settings" method="_on_h_slider_2_value_changed"]
 [connection signal="pressed" from="CanvasLayer/Close" to="CanvasLayer/Close" method="_on_pressed"]
