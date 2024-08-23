@@ -2,8 +2,10 @@ extends AudioStreamPlayer
 
 var transition_to
 var enabled = true
+var volume = 100
 
 func _ready():
+	bus = &"music"
 	if Status.loop == -1: enabled = false
 	if Status.level > 0:
 		stream = load("res://sound/winds.mp3")
@@ -22,7 +24,7 @@ func set_music_to_game():
 		transition_to = "winds"
 	self['parameters/looping'] = not (transition_to == "gameover" and Status.level==0)
 	stream = load("res://sound/"+transition_to+".mp3")
-	volume_db = 0
+	volume_db += volume - 100
 	playing = enabled
 
 func start_winds():

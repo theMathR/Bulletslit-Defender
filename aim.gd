@@ -4,15 +4,6 @@ extends Sprite2D
 @onready var LIMIT_P = $"../LoopholeCover/Block2".position.x
 
 func _process(delta):
-#	 Controller support
-	var mouse_move = Input.get_vector("mouse_left","mouse_right","mouse_up","mouse_down")
-	if mouse_move:
-		get_viewport().warp_mouse(position+mouse_move*0.25/delta)
-	if Input.is_action_just_pressed("shoot") and Status.aiming:
-		var press = InputEventMouseButton.new()
-		press.position = position
-		press.pressed = true
-		Input.parse_input_event(press)
 	
 	if Status.aiming:
 		position = get_viewport().get_mouse_position()

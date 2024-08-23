@@ -1,4 +1,4 @@
-[gd_scene load_steps=92 format=4 uid="uid://cmbsjiqn01q6a"]
+[gd_scene load_steps=102 format=4 uid="uid://cmbsjiqn01q6a"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_vfau6"]
 [ext_resource type="Texture2D" uid="uid://d2s2wv2cd84tq" path="res://assets/feetright.png" id="2_o0h64"]
@@ -36,17 +36,25 @@
 [ext_resource type="Texture2D" uid="uid://dc6p1qt0n3emt" path="res://assets/reset_pressed.png" id="29_hci7n"]
 [ext_resource type="Texture2D" uid="uid://bnhfvt52i5d3h" path="res://assets/play.png" id="29_sgc0q"]
 [ext_resource type="Texture2D" uid="uid://b7aw02ejwb1tj" path="res://assets/arrowpressed.png" id="29_uvwlx"]
+[ext_resource type="Texture2D" uid="uid://bxk0e67tia58f" path="res://assets/settings1.png" id="30_bkhwo"]
 [ext_resource type="Texture2D" uid="uid://dihatf3ga632h" path="res://assets/play_pressed.png" id="30_u33e0"]
+[ext_resource type="Texture2D" uid="uid://dxyuflt28vnr1" path="res://assets/settings.png" id="31_lw10g"]
 [ext_resource type="Script" path="res://pause_screen.gd" id="31_v54tb"]
+[ext_resource type="Texture2D" uid="uid://bqitxkafqiwuw" path="res://assets/settings_pressed.png" id="31_y37k3"]
 [ext_resource type="Texture2D" uid="uid://dcml7012skhfe" path="res://assets/paused.png" id="32_mh73v"]
 [ext_resource type="Script" path="res://game_over.gd" id="33_byhff"]
 [ext_resource type="Texture2D" uid="uid://bdccuq4g255d3" path="res://assets/died.png" id="34_wy543"]
+[ext_resource type="Script" path="res://buttons.gd" id="35_8l8u7"]
 [ext_resource type="AudioStream" uid="uid://d0a7yfsyyxk7g" path="res://sound/pause.mp3" id="35_bea61"]
 [ext_resource type="Texture2D" uid="uid://8ops4fyhlbxc" path="res://assets/retry.png" id="35_j5efh"]
 [ext_resource type="Texture2D" uid="uid://cw611s4fxwgvf" path="res://assets/music.png" id="36_0pc2n"]
+[ext_resource type="Texture2D" uid="uid://k1uukuuov8oq" path="res://assets/button.png" id="36_fi5d3"]
 [ext_resource type="Texture2D" uid="uid://bkjt3gk8ceuda" path="res://assets/retry_pressed.png" id="36_jqpv3"]
 [ext_resource type="Texture2D" uid="uid://snoi20p02kbd" path="res://assets/ui3.png" id="37_0chsu"]
 [ext_resource type="Texture2D" uid="uid://dr1ybdl8dsxcq" path="res://assets/music_unchecked.png" id="37_3tx0s"]
+[ext_resource type="Script" path="res://inputbind.gd" id="37_5hn2i"]
+[ext_resource type="Theme" uid="uid://de2q54h6fa4y0" path="res://player.tres" id="37_16yf2"]
+[ext_resource type="PackedScene" uid="uid://nxtgpi6dc6rn" path="res://h_slider.tscn" id="38_daist"]
 [ext_resource type="AudioStream" uid="uid://blieh4k7vi1fp" path="res://sound/switch.mp3" id="39_r7w4i"]
 [ext_resource type="Script" path="res://fakemusic.gd" id="40_2lm58"]
 
@@ -2240,6 +2248,12 @@ Button/styles/focus = SubResource("StyleBoxFlat_k4tib")
 Button/styles/hover = SubResource("StyleBoxFlat_ad785")
 Button/styles/normal = SubResource("StyleBoxFlat_8wygf")
 Button/styles/pressed = SubResource("StyleBoxFlat_qlgyq")
+CheckBox/icons/checked = ExtResource("36_0pc2n")
+CheckBox/icons/unchecked = ExtResource("37_3tx0s")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n8g1u"]
+texture = ExtResource("31_lw10g")
+axis_stretch_horizontal = 1
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tagvi"]
 shader = ExtResource("21_de61w")
@@ -2249,6 +2263,8 @@ shader_parameter/thinness = 10.0
 shader_parameter/speed = 15.0
 shader_parameter/frequency = 15.0
 shader_parameter/darken = 1.0
+
+[sub_resource type="Theme" id="Theme_7yjes"]
 
 [sub_resource type="Animation" id="Animation_ub0bb"]
 length = 0.001
@@ -2750,20 +2766,24 @@ position = Vector2(5, -125)
 shape = SubResource("RectangleShape2D_n80ew")
 
 [node name="StepSound" type="AudioStreamPlayer" parent="."]
+bus = &"sfx"
 
 [node name="FallSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_j3xkt")
 volume_db = 5.0
+bus = &"sfx"
 
 [node name="OpenSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_6nsx7")
 volume_db = 10.0
+bus = &"sfx"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 process_mode = 3
 
 [node name="StartSound" type="AudioStreamPlayer" parent="CanvasLayer"]
 stream = ExtResource("13_ofqk2")
+bus = &"sfx"
 
 [node name="Panel" type="TextureRect" parent="CanvasLayer"]
 visible = false
@@ -2848,7 +2868,6 @@ texture = ExtResource("14_epndl")
 
 [node name="PauseScreen" type="Control" parent="CanvasLayer"]
 process_mode = 3
-visible = false
 texture_filter = 1
 layout_mode = 3
 anchors_preset = 15
@@ -2933,6 +2952,196 @@ offset_right = 528.0
 offset_bottom = 103.0
 texture_normal = ExtResource("28_uo4x7")
 texture_pressed = ExtResource("29_hci7n")
+
+[node name="OpenTextureButton" type="TextureButton" parent="CanvasLayer/PauseScreen"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -25.0
+offset_top = -169.38
+offset_right = 25.0
+offset_bottom = -109.38
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("30_bkhwo")
+texture_pressed = ExtResource("31_y37k3")
+
+[node name="Settings" type="Control" parent="CanvasLayer/PauseScreen"]
+anchors_preset = 0
+offset_right = 401.0
+offset_bottom = 352.0
+
+[node name="Panel" type="Panel" parent="CanvasLayer/PauseScreen/Settings"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 950.0
+offset_bottom = 600.0
+scale = Vector2(1, 1.00137)
+theme_override_styles/panel = SubResource("StyleBoxTexture_n8g1u")
+
+[node name="Control" type="Control" parent="CanvasLayer/PauseScreen/Settings/Panel"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("35_8l8u7")
+
+[node name="Left" type="Label" parent="CanvasLayer/PauseScreen/Settings/Panel/Control"]
+layout_mode = 0
+offset_left = 300.0
+offset_top = 118.0
+offset_right = 393.0
+offset_bottom = 153.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 25
+text = "A"
+horizontal_alignment = 1
+
+[node name="LeftTextureButton" type="TextureButton" parent="CanvasLayer/PauseScreen/Settings/Panel/Control/Left"]
+show_behind_parent = true
+layout_mode = 0
+offset_left = -63.71
+offset_top = -10.31
+offset_right = 150.29
+offset_bottom = 40.69
+texture_normal = ExtResource("36_fi5d3")
+script = ExtResource("37_5hn2i")
+inputName = &"left"
+
+[node name="Right" type="Label" parent="CanvasLayer/PauseScreen/Settings/Panel/Control"]
+layout_mode = 0
+offset_left = 300.0
+offset_top = 178.0
+offset_right = 393.0
+offset_bottom = 213.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 25
+text = "A"
+horizontal_alignment = 1
+
+[node name="RightTextureButton" type="TextureButton" parent="CanvasLayer/PauseScreen/Settings/Panel/Control/Right"]
+show_behind_parent = true
+layout_mode = 0
+offset_left = -63.71
+offset_top = -10.31
+offset_right = 150.29
+offset_bottom = 40.69
+texture_normal = ExtResource("36_fi5d3")
+flip_h = true
+script = ExtResource("37_5hn2i")
+inputName = &"right"
+
+[node name="Jump" type="Label" parent="CanvasLayer/PauseScreen/Settings/Panel/Control"]
+layout_mode = 0
+offset_left = 300.0
+offset_top = 238.0
+offset_right = 393.0
+offset_bottom = 273.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 25
+text = "A"
+horizontal_alignment = 1
+
+[node name="JumpTextureButton" type="TextureButton" parent="CanvasLayer/PauseScreen/Settings/Panel/Control/Jump"]
+show_behind_parent = true
+layout_mode = 0
+offset_left = -63.71
+offset_top = -10.31
+offset_right = 150.29
+offset_bottom = 40.69
+texture_normal = ExtResource("36_fi5d3")
+flip_v = true
+script = ExtResource("37_5hn2i")
+inputName = &"jump"
+
+[node name="Interact" type="Label" parent="CanvasLayer/PauseScreen/Settings/Panel/Control"]
+layout_mode = 0
+offset_left = 300.0
+offset_top = 314.28
+offset_right = 393.0
+offset_bottom = 349.28
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 25
+text = "A"
+horizontal_alignment = 1
+
+[node name="InteractTextureButton" type="TextureButton" parent="CanvasLayer/PauseScreen/Settings/Panel/Control/Interact"]
+show_behind_parent = true
+layout_mode = 0
+offset_left = -63.71
+offset_top = -10.31
+offset_right = 150.29
+offset_bottom = 40.69
+texture_normal = ExtResource("36_fi5d3")
+script = ExtResource("37_5hn2i")
+inputName = &"interact"
+
+[node name="Pause" type="Label" parent="CanvasLayer/PauseScreen/Settings/Panel/Control"]
+layout_mode = 0
+offset_left = 300.0
+offset_top = 380.0
+offset_right = 393.0
+offset_bottom = 415.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 25
+text = "A"
+horizontal_alignment = 1
+
+[node name="PauseTextureButton" type="TextureButton" parent="CanvasLayer/PauseScreen/Settings/Panel/Control/Pause"]
+show_behind_parent = true
+layout_mode = 0
+offset_left = -55.71
+offset_top = -10.31
+offset_right = 158.29
+offset_bottom = 40.69
+texture_normal = ExtResource("36_fi5d3")
+flip_h = true
+flip_v = true
+script = ExtResource("37_5hn2i")
+inputName = &"pause"
+
+[node name="CloseSettings" type="TextureButton" parent="CanvasLayer/PauseScreen/Settings"]
+process_mode = 3
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 465.0
+offset_top = 59.0
+offset_right = 537.0
+offset_bottom = 138.0
+grow_horizontal = 0
+texture_normal = ExtResource("12_u5dh2")
+texture_hover = ExtResource("14_x4qbp")
+
+[node name="CheckBox" type="CheckBox" parent="CanvasLayer/PauseScreen/Settings"]
+layout_mode = 0
+offset_left = 672.0
+offset_top = 169.0
+offset_right = 734.0
+offset_bottom = 254.0
+theme = ExtResource("37_16yf2")
+button_pressed = true
+
+[node name="HSlider" parent="CanvasLayer/PauseScreen/Settings" instance=ExtResource("38_daist")]
+layout_mode = 0
+offset_left = 530.0
+offset_top = 218.0
+offset_right = 805.0
+offset_bottom = 303.0
+bus_name = "music"
+
+[node name="HSlider2" parent="CanvasLayer/PauseScreen/Settings" instance=ExtResource("38_daist")]
+layout_mode = 0
+offset_left = 530.0
+offset_top = 364.0
+offset_right = 805.0
+offset_bottom = 445.0
+bus_name = "sfx"
 
 [node name="Close" type="TextureButton" parent="CanvasLayer"]
 process_mode = 3
@@ -3187,9 +3396,8 @@ offset_left = -74.0
 offset_top = -69.0
 grow_horizontal = 0
 grow_vertical = 0
-theme = SubResource("Theme_rln7p")
+theme = ExtResource("37_16yf2")
 button_pressed = true
-text = "Music"
 
 [node name="HBoxContainer" type="Control" parent="CanvasLayer/TitleScreen/Glitched"]
 texture_filter = 1
@@ -3231,9 +3439,12 @@ texture_filter = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 26.0
+offset_right = 26.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+theme = SubResource("Theme_7yjes")
 color = Color(0, 0, 0, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
@@ -3243,12 +3454,15 @@ libraries = {
 
 [node name="CloseSound" type="AudioStreamPlayer" parent="CanvasLayer"]
 stream = ExtResource("22_kq5ui")
+bus = &"sfx"
 
 [node name="GunshotSound" type="AudioStreamPlayer" parent="CanvasLayer"]
 stream = ExtResource("24_vp4vs")
+bus = &"sfx"
 
 [node name="HatSound" type="AudioStreamPlayer" parent="CanvasLayer"]
 stream = ExtResource("39_r7w4i")
+bus = &"sfx"
 
 [node name="Music" type="Node" parent="CanvasLayer"]
 script = ExtResource("40_2lm58")
@@ -3264,6 +3478,9 @@ drag_vertical_enabled = true
 [connection signal="pressed" from="CanvasLayer/PauseScreen/Replay" to="CanvasLayer/PauseScreen" method="_on_texture_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/PauseScreen/HBoxContainer/Button" to="CanvasLayer/PauseScreen" method="_on_texture_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/PauseScreen/HBoxContainer/Button3" to="." method="reset"]
+[connection signal="pressed" from="CanvasLayer/PauseScreen/OpenTextureButton" to="CanvasLayer/PauseScreen" method="_on_open_texture_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/PauseScreen/Settings/CloseSettings" to="CanvasLayer/PauseScreen" method="_on_close_settings_pressed"]
+[connection signal="toggled" from="CanvasLayer/PauseScreen/Settings/CheckBox" to="CanvasLayer/PauseScreen" method="_on_check_box_toggled"]
 [connection signal="pressed" from="CanvasLayer/Close" to="CanvasLayer/Close" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/GameOver/Replay" to="CanvasLayer/GameOver" method="_on_texture_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/GameOver/HBoxContainer/Button2" to="CanvasLayer/GameOver" method="_on_texture_button_pressed"]
