@@ -1,6 +1,7 @@
 extends Control
 
 func _on_texture_button_pressed():
+	if $"../Settings".visible: return
 	$AudioStreamPlayer.stream = load("res://sound/unpause.mp3")
 	$AudioStreamPlayer.play()
 	hide()
@@ -15,7 +16,7 @@ func _ready():
 		
 
 func _process(delta):
-	if Input.is_action_just_pressed("pause") and not Status.is_choosing:
+	if Input.is_action_just_pressed("cancel") and not Status.is_choosing:
 		if visible:
 			_on_texture_button_pressed()
 		elif not (Status.interacting or get_tree().paused):

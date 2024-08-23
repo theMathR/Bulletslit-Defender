@@ -3399,7 +3399,7 @@ texture_pressed = ExtResource("36_mgfp1")
 flip_h = true
 flip_v = true
 script = ExtResource("37_5hn2i")
-inputName = &"pause"
+inputName = &"cancel"
 
 [node name="CloseSettings" type="TextureButton" parent="CanvasLayer/Settings"]
 process_mode = 3
@@ -3463,8 +3463,6 @@ texture_filter = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 26.0
-offset_right = 26.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2

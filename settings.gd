@@ -8,6 +8,7 @@ func _ready():
 
 
 func _on_close_settings_pressed():
+	$"../CloseSound".play()
 	hide()
 	
 
