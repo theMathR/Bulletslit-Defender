@@ -43,7 +43,9 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y = min(2000, velocity.y+2500*delta)
 		$AnimationTree['parameters/in_air/transition_request'] = "yes"
-	else: $AnimationTree['parameters/in_air/transition_request'] = "no"
+	elif $AnimationTree['parameters/in_air/current_state'] == 'yes':
+		$AnimationTree['parameters/in_air/transition_request'] = "no"
+		$FallSound.play()
 
 	if reloading: return # Disable controls when reloading
 

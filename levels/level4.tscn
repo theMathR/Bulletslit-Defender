@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://gxujxgtsso32"]
+[gd_scene load_steps=16 format=4 uid="uid://gxujxgtsso32"]
 
 [ext_resource type="PackedScene" uid="uid://bf85pwty15ec8" path="res://bg.tscn" id="1_rkmf3"]
 [ext_resource type="Script" path="res://levels/level4_quicksave.gd" id="1_yhxu8"]
@@ -7,11 +7,22 @@
 [ext_resource type="TileSet" uid="uid://b1m7plmymjmhb" path="res://tileset.tres" id="3_bieyr"]
 [ext_resource type="PackedScene" uid="uid://dcy22ebc07uwj" path="res://rift.tscn" id="3_jgp7k"]
 [ext_resource type="PackedScene" uid="uid://bcx6fhx3xkwo3" path="res://enemy.tscn" id="4_lackl"]
+[ext_resource type="Shader" path="res://glitch.gdshader" id="6_ncrom"]
+[ext_resource type="Texture2D" uid="uid://c4gr3ber233ww" path="res://assets/furniture4.png" id="7_atqcc"]
 [ext_resource type="PackedScene" uid="uid://ioxwrlmsxpfr" path="res://reload_box.tscn" id="7_cm8fr"]
 [ext_resource type="PackedScene" uid="uid://dbixll5kvjupg" path="res://transition_rift.tscn" id="7_xcxk6"]
 [ext_resource type="PackedScene" uid="uid://dl4f6f6w7osil" path="res://game_panel.tscn" id="8_spuy4"]
 [ext_resource type="PackedScene" uid="uid://d3n1kb7k701oo" path="res://levels/level5.tscn" id="8_x8p6a"]
 [ext_resource type="Texture2D" uid="uid://kmi2rke2xyp2" path="res://panels/level4.png" id="9_pg342"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mbts1"]
+shader = ExtResource("6_ncrom")
+shader_parameter/intensity = 1.0
+shader_parameter/color = 0.1
+shader_parameter/thinness = 20.0
+shader_parameter/speed = 15.0
+shader_parameter/frequency = 100.0
+shader_parameter/darken = 1.0
 
 [node name="Level5" type="Node2D"]
 texture_filter = 1
@@ -36,6 +47,7 @@ position = Vector2(1172, 1954)
 
 [node name="RPOS" type="Node2D" parent="R1"]
 process_mode = 4
+visible = false
 position = Vector2(-153, 1825)
 
 [node name="Rift" parent="R1" node_paths=PackedStringArray("target_position", "camera_min", "camera_max") instance=ExtResource("3_jgp7k")]
@@ -59,6 +71,13 @@ camera = NodePath("../../C3")
 [node name="Loophole4" parent="R1" node_paths=PackedStringArray("camera") instance=ExtResource("2_052or")]
 position = Vector2(-340, 1137)
 camera = NodePath("../../C4")
+
+[node name="Sprite2D" type="Sprite2D" parent="R1"]
+material = SubResource("ShaderMaterial_mbts1")
+position = Vector2(-770, 1088)
+scale = Vector2(0.5, 2)
+skew = 0.897099
+texture = ExtResource("7_atqcc")
 
 [node name="R2" type="Node2D" parent="."]
 

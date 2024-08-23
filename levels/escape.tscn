@@ -154,9 +154,8 @@ process_mode = 3
 wait_time = 0.05
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Escape/Rift"]
-process_mode = 2
+process_mode = 3
 stream = ExtResource("15_uc481")
-autoplay = true
 
 [node name="Player" parent="Escape" node_paths=PackedStringArray("camera_min", "camera_max") instance=ExtResource("3_bime2")]
 position = Vector2(-396, 48)

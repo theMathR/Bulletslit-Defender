@@ -7,6 +7,9 @@ func act():
 	$Timer.start()
 	$"../../CanvasLayer".show()
 	get_tree().paused = true
+	$AudioStreamPlayer.play()
+	$AudioStreamPlayer2.play()
+	$AudioStreamPlayer3.play()
 	stats_random()
 
 func stats_random():

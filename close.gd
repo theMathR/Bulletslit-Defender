@@ -1,7 +1,8 @@
 extends TextureButton
 
 func _process(_delta):
-	if visible and Input.is_action_just_pressed("cancel"): _on_pressed()
+	if visible and Input.is_action_just_pressed("cancel"):
+		_on_pressed()
 
 func _on_pressed():
 	$"../CloseSound".play()

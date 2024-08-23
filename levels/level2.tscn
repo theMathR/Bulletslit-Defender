@@ -47,20 +47,17 @@ process_mode = 3
 wait_time = 0.05
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Node2D/TrueEnding"]
-process_mode = 2
+process_mode = 3
 stream = ExtResource("3_0yia1")
-autoplay = true
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Node2D/TrueEnding"]
-process_mode = 2
+process_mode = 3
 stream = ExtResource("4_f5ngr")
-autoplay = true
 
 [node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="Node2D/TrueEnding"]
-process_mode = 2
+process_mode = 3
 stream = ExtResource("5_p4bjp")
 volume_db = 15.0
-autoplay = true
 
 [node name="TransitionRift" parent="Node2D" instance=ExtResource("2_4qc58")]
 position = Vector2(1844, -554)
