@@ -22,6 +22,8 @@ func stats_random():
 
 func _on_timer_timeout():
 	tcount += 1
+	if tcount % 5:
+		get_window().position += Vector2i(randi()%100-50,randi()%100-50)
 	print('WHY')
 	stats_random()
 	var p = TextureRect.new()
